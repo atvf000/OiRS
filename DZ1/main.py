@@ -1,9 +1,8 @@
-import numpy as np
+# import numpy as np
 import pandas as pd
 import collections
 
 import matplotlib.pyplot as plt
-
 
 def task1(data):
     print("Task 1")
