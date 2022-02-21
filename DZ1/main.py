@@ -4,6 +4,7 @@ import collections
 
 import matplotlib.pyplot as plt
 
+
 def task1(data):
     print("Task 1")
     print(f'male = {len(data[data["Sex"] == "male"])} \n'
@@ -12,18 +13,17 @@ def task1(data):
 
 def task2(data):
     print("\nTask 2")
-    pd.plotting.scatter_matrix(data[["Pclass"]], diagonal="kde")
+    data["Pclass"].hist()
     plt.show()
 
-    male_data = data[data["Sex"] == "male"]
-    pd.plotting.scatter_matrix(male_data[["Pclass"]], diagonal="kde")
+    data[data["Sex"] == "male"].Pclass.hist()
     plt.show()
 
-    female_data = data[data["Sex"] == "female"]
-    pd.plotting.scatter_matrix(female_data[["Pclass"]], diagonal="kde")
+    data[data["Sex"] == "female"].Pclass.hist()
     plt.show()
 
-    print(f'male in 2nd class = {len(male_data[male_data["Pclass"] == 2])}')
+    print(f'male in 2nd class ='
+          f' {len(data[(data["Pclass"] == 2) & (data["Sex"] == "male")])}')
 
 
 def task3(data):
@@ -57,6 +57,10 @@ def task6(data):
     data["Name"].apply(count_name)
     most_popular_name = max(dictionary, key=dictionary.get)
     print(f'most popular name - {most_popular_name}')
+
+
+def task8(data):
+    print("\nTask 8")
 
 
 def main():
