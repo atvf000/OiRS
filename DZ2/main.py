@@ -7,9 +7,9 @@ import seaborn as sns
 def task1(train_df):
     if 'male' in set(train_df['Sex']):
         train_df['Sex'] = train_df['Sex'].map({'male': 0, 'female': 1})
-
     if 'S' in set(train_df['Embarked']):
         train_df['Embarked'] = train_df['Embarked'].map({'S': 0, 'C': 1, 'Q': 2})
+
     sns.pairplot(train_df[["Age", "Fare", "Pclass", "Sex", "SibSp", "Parch", "Embarked", "Survived"]])
     plt.show()
 
@@ -84,7 +84,7 @@ if __name__ == '__main__':
     train_df = train_df.drop('Cabin', axis=1).dropna()
 
     # task1(train_df)
-    # task2(train_df)
-    # task3(train_df)
+    #task2(train_df)
+    task3(train_df)
     # task4(train_df)
-    task5(train_df)
+    # task5(train_df)
